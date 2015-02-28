@@ -1,0 +1,26 @@
+.post_list h2{
+    margin-top: 10px;
+    font-size: x-large;
+    font-weight: normal;
+}
+
+.post_list .posts{
+    font-size: medium;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+.post_list .posts li{
+    margin-bottom: 20px;
+    border-left: 3px solid rgba(255, 153, 0, 0.81);
+}
+
+.post_list .entry_title{
+    margin-left: 10px;
+}
+
+.post_list .tag{
+    font-size: small;
+    float: left;
+    margin-left: 10px;
+}

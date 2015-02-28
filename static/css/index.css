@@ -1,0 +1,26 @@
+.recent_posts h2{
+    margin-top: 10px;
+    font-size: x-large;
+    font-weight: normal;
+}
+
+.recent_posts .posts{
+    font-size: medium;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+.recent_posts .posts li{
+    margin-bottom: 20px;
+    border-left: 3px solid rgba(255, 153, 0, 0.81);
+}
+
+.recent_posts .entry_title{
+    margin-left: 10px;
+}
+
+.recent_posts .tag{
+    font-size: small;
+    float: left;
+    margin-left: 10px;
+}

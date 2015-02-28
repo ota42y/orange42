@@ -1,0 +1,46 @@
+li {
+    list-style: circle inside;
+}
+
+.article{
+    font-size: 16px;
+}
+
+.article .post_title{
+    padding-bottom: 20px;
+}
+
+.article .post_title h5{
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.article .post_title .post_detail{
+    font-size: small;
+    color: #999;
+}
+
+.article .post_title .post_detail .tag{
+    margin-left: 10px;
+    float: left;
+}
+
+.article .post_title .post_detail .date {
+    margin-right: 10px;
+    float: left;
+}
+
+.article h2{
+    width: 80%;
+    margin-left: -15px;
+    padding-left: 10px;
+    border-left: thick solid rgba(255, 153, 0, 0.81);
+    border-bottom: thin solid rgba(255, 153, 0, 0.81);
+}
+
+.article h3{
+    width: 80%
+    margin-left: -15px;
+    padding-left: 15px;
+    border-bottom: thin solid rgba(255, 153, 0, 0.81);
+}
