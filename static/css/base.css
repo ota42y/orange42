@@ -3,7 +3,6 @@
     line-height: 1.5;
     font-family: verdana,arial,helvetica,sans-serif;
     color: #333;
-
     letter-spacing: 0;
 }
 
@@ -97,5 +96,6 @@ ul {
 }
 
 a {
+    color: rgb(4, 30, 198);
     text-decoration: none;
 }
