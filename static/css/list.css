@@ -11,6 +11,7 @@
 }
 
 .post_list .posts li{
+    list-style: none;
     margin-bottom: 20px;
     border-left: 3px solid rgba(255, 153, 0, 0.81);
 }
