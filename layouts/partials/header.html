@@ -2,9 +2,16 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>{{ .Title }}</title>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/list.css">
+
+    {{ if eq .Site.Title .Title }}
+    <title>{{ .Site.Title }}</title>
+    {{ else }}
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ end }}
+
+    <link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/base.css">
+    <link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/list.css">
+    <link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/single.css">
 
     <meta name="description" content="{{ .Title }}">
     <meta name="author" content="ota42y">

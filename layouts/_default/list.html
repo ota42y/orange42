@@ -1,70 +1,53 @@
-<!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>おおたの物置</title>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/list.css">
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
 
-    <meta name="description" content="site">
-    <meta name="author" content="ota42y">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+<div class="content">
+    <div class="main">
+        <div class="post_list">
+            <h2>{{ .Title }}</h2>
 
-<body>
+            <ul class="posts">
+                {{ $BaseUrl := .Site.BaseUrl }}
 
-<div class="body">
-    <div class="header_wrapper">
-        <div class="content">
-            <div class="header">
-                <div class="header_left">
-                    <a class="banner" href="/">おおたの物置</a>
-                </div>
-                <div class="header_right">about</div>
-            </div>
-        </div>
-    </div>
+                {{ range $name, $page := .Data.Pages }}
+                <li>
+                    <div class="entry_title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
 
-    <div class="content">
-        <div class="main">
-            <div class="post_list">
-                <h2>過去の記事</h2>
+                    <time datetime="{{ $page.Date.Format "2006-01-02" }}" class="post_data">
+                    {{ $page.Date.Format "2006-01-02" }}
+                    </time>
 
-                <ul class="posts">
-                    <li>
-                        <div class="entry_title"><a href="http://localhost:1313/_default/single.html">2015-02-01 2015年8週目まとめ</a></div>
-                        <div class="tag">tag1</div><div class="tag">tag3</div><div class="tag">tag2</div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <div class="entry_title"><a href="http://localhost:1313/post/2015-02-22-summary/">なんかいろいろ</a></div>
-                        <div class="tag">tag1</div><div class="tag">tag3</div><div class="tag">tag2</div>
-                        <div class="clear"></div>
-                    </li>
 
-                    <li>
-                        <div class="entry_title"><a href="http://localhost:1313/post/2015-02-22-summary/">その２</a></div>
-                        <div class="tag">tag1</div><div class="tag">tag3</div><div class="tag">tag2</div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <div class="entry_title"><a href="http://localhost:1313/post/2015-02-22-summary/">その３</a></div>
-                        <div class="tag">tag1</div><div class="tag">tag3</div><div class="tag">tag2</div>
-                        <div class="clear"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+                    {{ if or $page.Params.categories }}
+                    {{ range $page.Params.categories}}
+                    <div class="separator">|</div>
+                    <div class="post_data">
+                        Category: <a href="{{ $BaseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>
+                    </div>
+                    {{ end }}
+                    {{ end }}
 
-    <div class="footer_wrapper footer_height">
-        <div class="content">
-            <div class="footer2">
-                Copyright © 2015 - ota42y
-            </div>
+                    {{ if or $page.Params.tags }}
+                    <div class="tags">
+                        <div class="separator">|</div>
+
+                        <div class="post_data">tags: [</div>
+
+                        {{ range $page.Params.tags}}
+                        <div class="post_data">
+                            <a href="{{ $BaseUrl }}/tags/{{ . | urlize }}">{{ . }}</a>
+                        </div>
+                        {{ end }}
+                        <div class="post_data">]</div>
+                    </div>
+                    {{ end }}
+
+                    <div class="clear"></div>
+                </li>
+                {{ end }}
+            </ul>
         </div>
     </div>
 </div>
 
-</body>
-</html>
+{{ partial "footer.html" . }}
