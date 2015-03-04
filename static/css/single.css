@@ -4,6 +4,11 @@
 
 .article .post_title{
     padding-bottom: 20px;
+    margin-left: -10px;
+}
+
+.article .post_title h1{
+    margin-left: 10px;
 }
 
 .article .post_title h5{
@@ -11,19 +16,9 @@
     margin-bottom: 0;
 }
 
-.article .post_title .post_detail{
-    font-size: small;
-    color: #999;
-}
-
-.article .post_title .post_detail .tag{
-    margin-left: 10px;
-    float: left;
-}
-
-.article .post_title .post_detail .date {
-    margin-right: 10px;
-    float: left;
+.article a{
+    color: #333;
+    text-decoration: underline;
 }
 
 .article h2{
@@ -35,7 +30,7 @@
 }
 
 .article h3{
-    width: 80%
+    width: 80%;
     margin-left: -15px;
     padding-left: 15px;
     border-bottom: thin solid rgba(255, 153, 0, 0.81);
