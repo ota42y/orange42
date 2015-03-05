@@ -45,6 +45,14 @@
                 </div>
 
                 <div class="article_body">
+                    <div id="toc">
+                        <div id="toc_body">
+                            <div id="toc_index">目次</div>
+                            {{ .TableOfContents }}
+                        </div>
+                    </div>
+
+
                     {{ .Content }}
                 </div>
             </div>
