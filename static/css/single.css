@@ -17,11 +17,10 @@
 }
 
 .article a{
-    color: #333;
     text-decoration: underline;
 }
 
-.article h2{
+.article_body h1{
     width: 80%;
     margin-left: -15px;
     padding-left: 10px;
@@ -29,9 +28,44 @@
     border-bottom: thin solid rgba(255, 153, 0, 0.81);
 }
 
-.article h3{
+.article_body h2{
     width: 80%;
     margin-left: -15px;
     padding-left: 15px;
     border-bottom: thin solid rgba(255, 153, 0, 0.81);
+}
+
+.article_body h3{
+    width: 80%;
+    margin-left: -15px;
+    padding-left: 15px;
+}
+
+.article_body li{
+    margin-left: 5px;
+}
+
+#toc {
+    padding-left: 15px;
+    float: right;
+}
+
+#toc #toc_body{
+    background-color: #F9F9F9;
+    border: 1px solid #AAAAAA;
+    font-size: 95%;
+    padding-right: 10px;
+}
+
+#toc #toc_index {
+    font-weight: bold;
+    text-align: center;
+}
+
+#toc ul {
+    padding-bottom: 0;
+}
+
+#toc li {
+    list-style: decimal inside;
 }
