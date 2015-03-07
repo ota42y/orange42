@@ -8,39 +8,7 @@
 
                 <div class="post_title">
                     <h1>{{ .Title }}</h1>
-
-                    {{ $BaseUrl := .Site.BaseUrl }}
-
-                    {{ $page := . }}
-                    <time datetime="{{ $page.Date.Format "2006-01-02" }}" class="post_data">
-                    {{ $page.Date.Format "2006-01-02" }}
-                    </time>
-
-
-                    {{ if or $page.Params.categories }}
-                    {{ range $page.Params.categories}}
-                    <div class="separator">|</div>
-                    <div class="post_data">
-                        Category: <a href="{{ $BaseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>
-                    </div>
-                    {{ end }}
-                    {{ end }}
-
-                    {{ if or $page.Params.tags }}
-                    <div class="tags">
-                        <div class="separator">|</div>
-
-                        <div class="post_data">tags: [</div>
-
-                        {{ range $page.Params.tags}}
-                        <div class="post_data">
-                            <a href="{{ $BaseUrl }}/tags/{{ . | urlize }}">{{ . }}</a>
-                        </div>
-                        {{ end }}
-                        <div class="post_data">]</div>
-                    </div>
-                    {{ end }}
-
+                    {{ partial "post_detail.html" . }}
                     <div class="clear"></div>
                 </div>
 

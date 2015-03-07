@@ -9,6 +9,11 @@
 
 .article .post_title h1{
     margin-left: 10px;
+
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+    border-bottom: none;
 }
 
 .article .post_title h5{
@@ -18,27 +23,6 @@
 
 .article a{
     text-decoration: underline;
-}
-
-.article_body h1{
-    width: 80%;
-    margin-left: -15px;
-    padding-left: 10px;
-    border-left: thick solid rgba(255, 153, 0, 0.81);
-    border-bottom: thin solid rgba(255, 153, 0, 0.81);
-}
-
-.article_body h2{
-    width: 80%;
-    margin-left: -15px;
-    padding-left: 15px;
-    border-bottom: thin solid rgba(255, 153, 0, 0.81);
-}
-
-.article_body h3{
-    width: 80%;
-    margin-left: -15px;
-    padding-left: 15px;
 }
 
 .article_body li{

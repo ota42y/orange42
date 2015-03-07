@@ -3,50 +3,49 @@
 
     <div class="content">
         <div class="main">
-            <div class="post_list">
-                <h2>最近のブログ投稿</h2>
+            <section>
+                <div class="post_list">
+                    <h1>最近のブログ投稿</h1>
 
-                <ul class="posts">
-                    {{ $BaseUrl := .Site.BaseUrl }}
-
-                    {{ range $name, $page := .Site.Recent }}
-                    <li>
-                        <div class="entry_title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-
-                        <time datetime="{{ $page.Date.Format "2006-01-02" }}" class="post_data">
-                          {{ $page.Date.Format "2006-01-02" }}
-                        </time>
-
-
-                        {{ if or $page.Params.categories }}
-                        {{ range $page.Params.categories}}
-                        <div class="separator">|</div>
-                        <div class="post_data">
-                            Category: <a href="{{ $BaseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>
-                        </div>
-                        {{ end }}
-                        {{ end }}
-
-                        {{ if or $page.Params.tags }}
-                        <div class="tags">
-                            <div class="separator">|</div>
-
-                            <div class="post_data">tags: [</div>
-
-                            {{ range $page.Params.tags}}
-                            <div class="post_data">
-                                <a href="{{ $BaseUrl }}/tags/{{ . | urlize }}">{{ . }}</a>
-                            </div>
-                            {{ end }}
-                            <div class="post_data">]</div>
-                        </div>
+                    <ul class="posts">
+                        {{ range $name, $page := first 5 .Site.Recent }}
+                        {{ partial "headline.html" $page }}
                         {{ end }}
 
                         <div class="clear"></div>
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
+                    </ul>
+                    <a href="/post/" class="archives">>> 過去の記事</a>
+                </div>
+            </section>
+
+            <section>
+                <div class="categories post_list">
+                    <h1>カテゴリ別の最近の投稿</h1>
+                    <section>
+
+                        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+                        {{ if eq "categories" $taxonomyname }}
+
+                        {{ range $key, $value := $taxonomy }}
+                        <section>
+                            <div class="post_list">
+                                <h2 id="categories::{{$key}}">{{ $key }}</h2>
+                                <ul class="posts">
+                                    {{ range first 2 $value.Pages }}
+                                    {{ partial "headline.html" . }}
+                                    {{ end }}
+                                    <a href="/categories/{{$key}}" class="archives">>> 過去の記事</a>
+                                </ul>
+                            </div>
+                        </section>
+                          {{ end }}
+
+                        {{ end }}
+                      {{ end }}
+                    </section>
+                </div>
+            </section>
+
         </div>
     </div>
 
