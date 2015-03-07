@@ -1,0 +1,28 @@
+<time datetime="{{ .Date.Format "2006-01-02" }}" class="post_data">
+{{ .Date.Format "2006-01-02" }}
+</time>
+
+
+{{ if or .Params.categories }}
+{{ range .Params.categories}}
+<div class="separator">|</div>
+<div class="post_data">
+    Category: <a href="/categories/{{ . | urlize }}">{{ . }}</a>
+</div>
+{{ end }}
+{{ end }}
+
+{{ if or .Params.tags }}
+<div class="tags">
+    <div class="separator">|</div>
+
+    <div class="post_data">tags: [</div>
+
+    {{ range .Params.tags}}
+    <div class="post_data">
+        <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+    </div>
+    {{ end }}
+    <div class="post_data">]</div>
+</div>
+{{ end }}
