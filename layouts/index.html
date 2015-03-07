@@ -3,17 +3,49 @@
 
     <div class="content">
         <div class="main">
-            <div class="post_list">
-                <h2>最近のブログ投稿</h2>
+            <section>
+                <div class="post_list">
+                    <h1>最近のブログ投稿</h1>
 
-                <ul class="posts">
-                    {{ range $name, $page := first 5 .Site.Recent }}
-                    {{ partial "headline.html" $page }}
-                    {{ end }}
+                    <ul class="posts">
+                        {{ range $name, $page := first 5 .Site.Recent }}
+                        {{ partial "headline.html" $page }}
+                        {{ end }}
 
+                        <div class="clear"></div>
+                    </ul>
                     <a href="/post/" class="archives">>> 過去の記事</a>
-                </ul>
-            </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="categories post_list">
+                    <h1>カテゴリ別の最近の投稿</h1>
+                    <section>
+
+                        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+                        {{ if eq "categories" $taxonomyname }}
+
+                        {{ range $key, $value := $taxonomy }}
+                        <section>
+                            <div class="post_list">
+                                <h2 id="categories::{{$key}}">{{ $key }}</h2>
+                                <ul class="posts">
+                                    {{ range first 2 $value.Pages }}
+                                    {{ partial "headline.html" . }}
+                                    {{ end }}
+                                    <a href="/categories/{{$key}}" class="archives">>> 過去の記事</a>
+                                </ul>
+                            </div>
+                        </section>
+                          {{ end }}
+
+                        {{ end }}
+                      {{ end }}
+                    </section>
+                </div>
+            </section>
+
         </div>
     </div>
 
