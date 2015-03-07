@@ -10,6 +10,8 @@
                     {{ range $name, $page := first 5 .Site.Recent }}
                     {{ partial "headline.html" $page }}
                     {{ end }}
+
+                    <a href="/post/" class="archives">>> 過去の記事</a>
                 </ul>
             </div>
         </div>
