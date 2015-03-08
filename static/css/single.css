@@ -53,3 +53,7 @@
 #toc li {
     list-style: decimal inside;
 }
+
+.social_buttons {
+    margin-top: 50px;
+}
