@@ -7,43 +7,8 @@
             <h2>{{ .Title }}</h2>
 
             <ul class="posts">
-                {{ $BaseUrl := .Site.BaseUrl }}
-
                 {{ range $name, $page := .Data.Pages }}
-                <li>
-                    <div class="entry_title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-
-                    <time datetime="{{ $page.Date.Format "2006-01-02" }}" class="post_data">
-                    {{ $page.Date.Format "2006-01-02" }}
-                    </time>
-
-
-                    {{ if or $page.Params.categories }}
-                    {{ range $page.Params.categories}}
-                    <div class="separator">|</div>
-                    <div class="post_data">
-                        Category: <a href="{{ $BaseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>
-                    </div>
-                    {{ end }}
-                    {{ end }}
-
-                    {{ if or $page.Params.tags }}
-                    <div class="tags">
-                        <div class="separator">|</div>
-
-                        <div class="post_data">tags: [</div>
-
-                        {{ range $page.Params.tags}}
-                        <div class="post_data">
-                            <a href="{{ $BaseUrl }}/tags/{{ . | urlize }}">{{ . }}</a>
-                        </div>
-                        {{ end }}
-                        <div class="post_data">]</div>
-                    </div>
-                    {{ end }}
-
-                    <div class="clear"></div>
-                </li>
+                {{ partial "headline.html" $page }}
                 {{ end }}
             </ul>
         </div>
