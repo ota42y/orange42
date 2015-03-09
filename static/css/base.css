@@ -41,6 +41,10 @@
     margin-left: 5%;
 }
 
+.footer_margin {
+    height: 40px;
+}
+
 .footer_height {
     height: 20px;
 }
@@ -53,7 +57,7 @@
     width: 100%;
 }
 
-.footer_wrapper .footer2 {
+.footer_wrapper .footer {
     font-size: x-small;
     text-align: center;
 }

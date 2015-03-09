@@ -22,26 +22,26 @@
                 <div class="categories post_list">
                     <h1>カテゴリ別の最近の投稿</h1>
                     <section>
-
+                        {{ $categories := .Site.Params.categories }}
                         {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-                        {{ if eq "categories" $taxonomyname }}
-
-                        {{ range $key, $value := $taxonomy }}
+                          {{ if eq "categories" $taxonomyname }}
+                            {{ range $category := $categories }}
                         <section>
                             <div class="post_list">
-                                <h2 id="categories::{{$key}}">{{ $key }}</h2>
+                                <h2 id="categories::{{$category}}">{{ $category }}</h2>
                                 <ul class="posts">
-                                    {{ range first 2 $value.Pages }}
-                                    {{ partial "headline.html" . }}
+                                    {{ $pages := index $taxonomy $category }}
+                                    {{ range $weightedPage := first 3 $pages }}
+                                    {{ partial "headline.html" $weightedPage.Page }}
                                     {{ end }}
-                                    <a href="/categories/{{$key}}" class="archives">>> 過去の記事</a>
+                                    <a href="/categories/{{$category}}" class="archives">>> 過去の記事</a>
                                 </ul>
                             </div>
                         </section>
-                          {{ end }}
 
+                            {{ end }}
+                          {{ end }}
                         {{ end }}
-                      {{ end }}
                     </section>
                 </div>
             </section>
