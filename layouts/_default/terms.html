@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="content">
+    <div class="main">
+        <div class="post_list">
+            <h2>{{ .Title }}</h2>
+
+            <ul class="posts">
+                {{ $data := .Data }}
+                {{ range $key, $value := .Data.Terms.ByCount }}
+                <li>
+                    <div class="entry_title"><a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a></div>
+                    <div class="post_data">{{len ($value.WeightedPages) }} posts</div>
+                    <div class="clear"></div>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}
