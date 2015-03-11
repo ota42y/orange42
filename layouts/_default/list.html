@@ -6,11 +6,14 @@
         <div class="post_list">
             <h2>{{ .Title }}</h2>
 
+            {{ range $weight, $group := .Data.Pages.GroupByDate "2006" }}
+            <h3>{{ $group.Key }}</h3>
             <ul class="posts">
-                {{ range $name, $page := .Data.Pages }}
+                {{ range $page := $group.Pages }}
                 {{ partial "headline.html" $page }}
                 {{ end }}
             </ul>
+            {{ end }}
         </div>
     </div>
 </div>
