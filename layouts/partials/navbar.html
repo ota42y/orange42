@@ -5,6 +5,13 @@
                     <a class="banner" href="/">{{ .Site.Title }}</a>
                 </div>
                 <div class="header_right">
+                    {{ if or .Site.Params.social.twitter_id }}
+                    <a href="https://twitter.com/{{.Site.Params.social.twitter_id}}">twitter</a>
+                    {{ end }}
+
+                    {{ if or .Site.Params.social.github }}
+                    <a href="https://github.com/{{.Site.Params.social.github}}">github</a>
+                    {{ end }}
                     <a href="{{ .RSSLink}}">RSS</a>
                 </div>
             </div>

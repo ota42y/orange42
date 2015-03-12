@@ -26,6 +26,10 @@
     float: right;
 }
 
+.header_right a {
+    margin-right: 20px;
+}
+
 .banner{
     text-decoration: none;
     color: #333;
