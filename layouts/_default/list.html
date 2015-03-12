@@ -6,16 +6,24 @@
         <div class="post_list">
             <h2>{{ .Title }}</h2>
 
-            {{ range $weight, $group := .Data.Pages.GroupByDate "2006" }}
-            <h3>{{ $group.Key }}</h3>
             <ul class="posts">
-                {{ range $page := $group.Pages }}
+                {{ range $page := .Paginator.Pages }}
                 {{ partial "headline.html" $page }}
                 {{ end }}
+
+                {{ template "_internal/pagination.html" . }}
             </ul>
-            {{ end }}
+
+
+
         </div>
+
+
+
+
     </div>
 </div>
+
+
 
 {{ partial "footer.html" . }}
