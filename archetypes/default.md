@@ -1,3 +1,4 @@
 +++
-category = "misc"
+categories = []
+tags = []
 +++

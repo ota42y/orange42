@@ -43,6 +43,7 @@
 .main {
     padding-top: 40px;
     margin-left: 5%;
+    margin-right: 5%;
 }
 
 .footer_margin {
@@ -83,7 +84,6 @@ h1 {
     margin-bottom: 5px;
     margin-top: 30px;
 
-    width: 80%;
     margin-left: -15px;
     padding-left: 10px;
     border-left: thick solid rgba(255, 153, 0, 0.81);
@@ -95,7 +95,6 @@ h2 {
     margin-top: 20px;
     margin-bottom: 5px;
 
-    width: 80%;
     margin-left: -15px;
     padding-left: 15px;
     border-bottom: thin solid rgba(255, 153, 0, 0.81);
@@ -105,7 +104,6 @@ h3 {
     margin-top: 20px;
     margin-bottom: 5px;
 
-    width: 80%;
     margin-left: -15px;
     padding-left: 15px;
 }

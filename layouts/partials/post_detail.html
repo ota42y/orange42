@@ -1,6 +1,10 @@
+
+{{ if .Date.IsZero  }}
+{{ else }}
 <time datetime="{{ .Date.Format "2006-01-02" }}" class="post_data">
 {{ .Date.Format "2006-01-02" }}
 </time>
+{{ end }}
 
 
 {{ if or .Params.categories }}
