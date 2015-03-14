@@ -8,11 +8,11 @@
                     <h1>最近のブログ投稿</h1>
 
                     <ul class="posts">
-                        {{ range $name, $page := first 5 (where .Site.Recent "Section" "post") }}
+                        {{ range $name, $page := first 5 (where .Site.Recent "Section" "blog") }}
                         {{ partial "headline.html" $page }}
                         {{ end }}
 
-                        <a href="/post/" class="archives">>> 過去の記事</a>
+                        <a href="/blog/" class="archives">>> 過去の記事</a>
 
                         <div class="clear"></div>
                     </ul>
