@@ -8,7 +8,7 @@
                     <h1>最近のブログ投稿</h1>
 
                     <ul class="posts">
-                        {{ range $name, $page := first 5 .Site.Recent }}
+                        {{ range $name, $page := first 5 (where .Site.Recent "Section" "post") }}
                         {{ partial "headline.html" $page }}
                         {{ end }}
 
@@ -46,6 +46,17 @@
                         {{ end }}
                     </section>
                 </div>
+            </section>
+
+            <section>
+                <ul class="h_list">
+                    <li>
+                        <a href="/pages/">pages</a>
+                    </li>
+                    <li>
+                        <a href="/about/">about</a>
+                    </li>
+                </ul>
             </section>
 
         </div>

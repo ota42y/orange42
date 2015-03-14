@@ -19,3 +19,15 @@
     font-weight: normal;
     color: #000;
 }
+
+.h_list{
+    float: right;
+}
+
+.h_list li {
+    font-weight: bold;
+    list-style: none;
+    margin-right: 20px;
+    border-left: none;
+    float: left;
+}
